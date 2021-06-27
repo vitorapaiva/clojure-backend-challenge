@@ -8,21 +8,21 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema payment
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema mydb
+-- Schema payment
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
-USE `mydb` ;
+CREATE SCHEMA IF NOT EXISTS `payment` DEFAULT CHARACTER SET utf8 ;
+USE `payment` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`user_type`
+-- Table `payment`.`user_type`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`user_type` ;
+DROP TABLE IF EXISTS `payment`.`user_type` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`user_type` (
+CREATE TABLE IF NOT EXISTS `payment`.`user_type` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `description` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`))
@@ -30,11 +30,11 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`user`
+-- Table `payment`.`user`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`user` ;
+DROP TABLE IF EXISTS `payment`.`user` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`user` (
+CREATE TABLE IF NOT EXISTS `payment`.`user` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `user_uuid` VARCHAR(45) NOT NULL,
   `user_type_id` INT NOT NULL,
@@ -42,18 +42,18 @@ CREATE TABLE IF NOT EXISTS `mydb`.`user` (
   INDEX `fk_user_user_type_idx` (`user_type_id` ASC) VISIBLE,
   CONSTRAINT `fk_user_user_type`
     FOREIGN KEY (`user_type_id`)
-    REFERENCES `mydb`.`user_type` (`id`)
+    REFERENCES `payment`.`user_type` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`transaction`
+-- Table `payment`.`transaction`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`transaction` ;
+DROP TABLE IF EXISTS `payment`.`transaction` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`transaction` (
+CREATE TABLE IF NOT EXISTS `payment`.`transaction` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `transaction_uuid` VARCHAR(45) NOT NULL,
   `payer_id` INT NOT NULL,
@@ -64,23 +64,23 @@ CREATE TABLE IF NOT EXISTS `mydb`.`transaction` (
   INDEX `fk_transaction_user2_idx` (`payee_id` ASC) VISIBLE,
   CONSTRAINT `fk_transaction_user1`
     FOREIGN KEY (`payer_id`)
-    REFERENCES `mydb`.`user` (`id`)
+    REFERENCES `payment`.`user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_transaction_user2`
     FOREIGN KEY (`payee_id`)
-    REFERENCES `mydb`.`user` (`id`)
+    REFERENCES `payment`.`user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`wallet`
+-- Table `payment`.`wallet`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `mydb`.`wallet` ;
+DROP TABLE IF EXISTS `payment`.`wallet` ;
 
-CREATE TABLE IF NOT EXISTS `mydb`.`wallet` (
+CREATE TABLE IF NOT EXISTS `payment`.`wallet` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `value` INT NOT NULL,
   `user_id` INT NOT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`wallet` (
   INDEX `fk_wallet_user1_idx` (`user_id` ASC) VISIBLE,
   CONSTRAINT `fk_wallet_user1`
     FOREIGN KEY (`user_id`)
-    REFERENCES `mydb`.`user` (`id`)
+    REFERENCES `payment`.`user` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
