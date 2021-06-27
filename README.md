@@ -36,3 +36,10 @@ POST /transaction
 }
 ```
 
+### Materiais de leitura usados nesse projeto
+
+* https://medium.com/trainingcenter/criando-api-crud-com-clojure-ba82edc1ad59
+* https://medium.com/swlh/building-a-rest-api-in-clojure-3a1e1ae096e
+* https://culttt.com/2014/05/28/handle-money-currency-web-applications/
+* https://tutswiki.com/rest-api-in-clojure/
+
