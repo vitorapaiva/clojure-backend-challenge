@@ -5,7 +5,8 @@
   (korma/mysql
     {:classname   "com.mysql.jdbc.Driver"
      :subprotocol "mysql"
-     :user        "root"
+     :user        "backend"
+     :password    "backend"
      :subname     "//localhost:3306/payment"}))
 
 ; set up korma

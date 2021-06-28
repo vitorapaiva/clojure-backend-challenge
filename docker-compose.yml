@@ -1,0 +1,16 @@
+version: "3.1"
+services:
+
+  mysql:
+    image: mysql:8.0
+    working_dir: /application
+    volumes:
+      - .:/application
+    environment:
+      - MYSQL_ROOT_PASSWORD=backend
+      - MYSQL_DATABASE=backend
+      - MYSQL_USER=backend
+      - MYSQL_PASSWORD=backend
+    ports:
+      - "51002:3306"
+
