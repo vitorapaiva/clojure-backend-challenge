@@ -1,6 +1,5 @@
 (ns clojure-backend-challenge.handler
   (:require [compojure.core :refer :all]
-            [ring.ring-defaults :as handler]
             [compojure.route :as route]
             [ring.middleware.json :as json]
             [ring.util.response :refer [response]]
@@ -10,6 +9,7 @@
 
 (defroutes app-routes
            (POST "/api/user/type" {:keys [params]}
+             (print params)
              (let [{:keys [description]} params]
                (response (add-user-type description))))
            (POST "/api/user" {:keys [params]}
@@ -21,6 +21,6 @@
            (route/not-found "Not Found"))
 
 (def app
-  (-> (handler/api app-routes)
-      (json/wrap-json-params)
-      (json/wrap-json-response)))
+  (-> app-routes
+      json/wrap-json-params
+      json/wrap-json-response))

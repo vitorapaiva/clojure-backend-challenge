@@ -3,11 +3,13 @@
 
 (def db-connection-info
   (korma/mysql
-    {:classname   "com.mysql.jdbc.Driver"
+    {:classname   "com.mysql.cj.jdbc.Driver"
      :subprotocol "mysql"
+     :db          "backend"
      :user        "backend"
      :password    "backend"
-     :subname     "//localhost:3306/payment"}))
+     :host        "localhost"
+     :port        "51002"}))
 
 ; set up korma
 (korma/defdb db db-connection-info)

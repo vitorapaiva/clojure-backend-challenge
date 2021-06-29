@@ -18,9 +18,13 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Leiningen: cheshire:5.10.0" level="project" />
     <orderEntry type="library" name="Leiningen: clj-stacktrace:0.2.8" level="project" />
     <orderEntry type="library" name="Leiningen: clojure-complete:0.2.5" level="project" />
     <orderEntry type="library" name="Leiningen: clout:2.2.1" level="project" />
+    <orderEntry type="library" name="Leiningen: com.fasterxml.jackson.core/jackson-core:2.10.2" level="project" />
+    <orderEntry type="library" name="Leiningen: com.fasterxml.jackson.dataformat/jackson-dataformat-cbor:2.10.2" level="project" />
+    <orderEntry type="library" name="Leiningen: com.fasterxml.jackson.dataformat/jackson-dataformat-smile:2.10.2" level="project" />
     <orderEntry type="library" name="Leiningen: com.google.protobuf/protobuf-java:3.11.4" level="project" />
     <orderEntry type="library" name="Leiningen: com.mchange/c3p0:0.9.5.2" level="project" />
     <orderEntry type="library" name="Leiningen: com.mchange/mchange-commons-java:0.2.11" level="project" />
@@ -54,8 +58,10 @@
     <orderEntry type="library" name="Leiningen: ring/ring-core:1.8.1" level="project" />
     <orderEntry type="library" name="Leiningen: ring/ring-devel:1.9.3" level="project" />
     <orderEntry type="library" name="Leiningen: ring/ring-jetty-adapter:1.9.3" level="project" />
+    <orderEntry type="library" name="Leiningen: ring/ring-json:0.5.1" level="project" />
     <orderEntry type="library" name="Leiningen: ring/ring-mock:0.3.0" level="project" />
     <orderEntry type="library" name="Leiningen: ring/ring-servlet:1.9.3" level="project" />
     <orderEntry type="library" name="Leiningen: ring:1.9.3" level="project" />
+    <orderEntry type="library" name="Leiningen: tigris:0.1.2" level="project" />
   </component>
 </module>

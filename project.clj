@@ -6,6 +6,7 @@
   :dependencies [[org.clojure/clojure "1.10.1"]
                  [compojure "1.6.2"]
                  [ring "1.9.3"]
+                 [ring/ring-json "0.5.1"]
                  [korma "0.4.3"]
                  [mysql/mysql-connector-java "8.0.25"]]
   :plugins [[lein-ring "0.12.5"]]
