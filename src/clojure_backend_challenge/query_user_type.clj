@@ -8,9 +8,8 @@
   (select user_type))
 
 (defn add-user-type [description]
-  (print description))
-  ;(insert user_type
-  ;        (values {:description description})))
+  (insert user_type
+          (values {:description description})))
 
 (defn get-user-type [id]
   (first

@@ -1,15 +1,14 @@
 (ns clojure-backend-challenge.handler
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
-            [ring.middleware.json :as json]
+            [ring.middleware.json :refer :all :as json]
             [ring.util.response :refer [response]]
             [clojure-backend-challenge.query-user-type :refer :all]
             [clojure-backend-challenge.query-transaction :refer :all]
             [clojure-backend-challenge.query-user :refer :all]))
 
 (defroutes app-routes
-           (POST "/api/user/type" {:keys [params]}
-             (print params)
+           (POST "/api/user/type" [params]
              (let [{:keys [description]} params]
                (response (add-user-type description))))
            (POST "/api/user" {:keys [params]}
