@@ -43,4 +43,5 @@ POST /transaction
 * https://culttt.com/2014/05/28/handle-money-currency-web-applications/
 * https://tutswiki.com/rest-api-in-clojure/
 * https://nblumoe.github.io/mundane-clojure-for-mortals/org/api-for-mortals.html
-
+* https://www.baeldung.com/clojure-ring
+* https://clojuredocs.org/clojure.core/get
