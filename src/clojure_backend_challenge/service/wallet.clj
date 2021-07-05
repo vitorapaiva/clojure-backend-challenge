@@ -1,4 +1,4 @@
-(ns clojure-backend-challenge.query-wallet
+(ns clojure-backend-challenge.service.wallet
   (:require [clojure-backend-challenge.database]
             [korma.core :refer :all]))
 

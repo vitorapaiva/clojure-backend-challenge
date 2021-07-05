@@ -1,9 +1,7 @@
-(ns clojure-backend-challenge.query-user
+(ns clojure-backend-challenge.service.user
   (:require [clojure-backend-challenge.database]
+            []
             [korma.core :refer :all]))
-
-(defentity user)
-
 
 (defn get-users []
   (select user))

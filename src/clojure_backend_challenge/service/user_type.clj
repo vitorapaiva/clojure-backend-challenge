@@ -1,4 +1,4 @@
-(ns clojure-backend-challenge.query-user-type
+(ns clojure-backend-challenge.service.user-type
   (:require [clojure-backend-challenge.database]
             [korma.core :refer :all]))
 

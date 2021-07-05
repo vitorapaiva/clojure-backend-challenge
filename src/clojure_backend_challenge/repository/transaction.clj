@@ -1,4 +1,4 @@
-(ns clojure-backend-challenge.query-transaction
+(ns clojure-backend-challenge.repository.transaction
   (:require [clojure-backend-challenge.database]
             [korma.core :refer :all]))
 

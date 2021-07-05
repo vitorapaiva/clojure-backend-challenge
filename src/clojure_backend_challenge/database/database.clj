@@ -1,4 +1,4 @@
-(ns clojure-backend-challenge.database
+(ns clojure-backend-challenge.database.database
   (:require [korma.db :as korma]))
 
 (def db-connection-info
