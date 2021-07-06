@@ -4,7 +4,7 @@
             [korma.core :refer :all]))
 
 (defn get-transactions []
-  (transaction-repo/get-transaction ()))
+  (transaction-repo/get-transactions))
 
 (defn add-transaction [payer_id payee_id value]
   (transaction-repo/add-transaction payer_id payee_id value))

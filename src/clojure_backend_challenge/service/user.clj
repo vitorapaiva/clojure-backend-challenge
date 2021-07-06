@@ -1,16 +1,13 @@
 (ns clojure-backend-challenge.service.user
   (:require [clojure-backend-challenge.database]
-            []
+            [clojure-backend-challenge.repository.user :as user-repo]
             [korma.core :refer :all]))
 
 (defn get-users []
-  (select user))
+  (user-repo/get-users))
 
 (defn add-user [user_uuid user_type_id]
-  (insert user
-          (values {:user_uuid user_uuid :user_type_id user_type_id})))
+  (user-repo/add-user user_uuid user_type_id))
 
 (defn get-user [user_uuid]
-  (first
-    (select user
-            (where {:user_uuid [= user_uuid]}))))
+  (user-repo/get-user user_uuid))

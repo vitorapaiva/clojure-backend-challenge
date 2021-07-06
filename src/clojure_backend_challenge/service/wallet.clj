@@ -1,20 +1,13 @@
 (ns clojure-backend-challenge.service.wallet
   (:require [clojure-backend-challenge.database]
+            [clojure-backend-challenge.repository.wallet :as wallet-repo]
             [korma.core :refer :all]))
 
-(defentity wallet)
-
-
 (defn add-wallet [user_id value]
-  (insert wallet
-          (values {:user_id user_id :value value})))
+  (wallet-repo/add-wallet user_id value))
 
 (defn update-wallet [user_id value]
-  (update wallet
-          (set-fields {:value value})
-          (where {:user_id [= user_id]})))
+  (wallet-repo/update-wallet user_id value))
 
 (defn get-wallet [user_id]
-  (first
-    (select wallet
-            (where {:user_id [= user_id]}))))
+  (wallet-repo/get-wallet user_id))

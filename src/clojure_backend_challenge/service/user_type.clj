@@ -1,17 +1,13 @@
 (ns clojure-backend-challenge.service.user-type
   (:require [clojure-backend-challenge.database]
+            [clojure-backend-challenge.repository.user-type :as user-type-repo]
             [korma.core :refer :all]))
 
-(defentity user_type)
-
 (defn get-user-types []
-  (select user_type))
+  (user-type-repo/get-user-types))
 
 (defn add-user-type [description]
-  (insert user_type
-          (values {:description description})))
+  (user-type-repo/add-user-type description))
 
 (defn get-user-type [id]
-  (first
-    (select user_type
-            (where {:id [= id]}))))
+  (user-type-repo/get-user-type id))
